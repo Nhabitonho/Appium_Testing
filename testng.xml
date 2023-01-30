@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test name="test for android">
+        <classes>
+            <class name="testcases.Create_ContactTest"/>
+            <class name="testcases.Edit_ContactTest"/>
+            <class name="testcases.SendMess_ContactTest"/>
+            <class name="testcases.Delete_ContactTest"/>
+            <class name="testcases.Search_ContactTest"/>
+        </classes>
+    </test>
+</suite>
