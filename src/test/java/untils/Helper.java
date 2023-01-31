@@ -20,6 +20,7 @@ public class Helper extends BaseSetup {
     public String editLastName = faker.name().lastName();
     public String phoneNum = faker.phoneNumber().cellPhone();
     public String email = firstName+lastName+"gmail.com";
+    // Fake 9 number
     public String sip = faker.regexify("\\d{9}");
     public String address = faker.address().streetAddress();
     public String searchName = editFirstName+ " "+ editLastName;
