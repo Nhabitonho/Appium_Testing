@@ -1,19 +1,17 @@
 package pages;
 
 //import driverManager.AndroidDriverManager;
-import com.github.javafaker.Faker;
-import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
 import io.appium.java_client.service.local.flags.GeneralServerFlag;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import untils.Helper;
+import ultilities.helpers.Helper;
 
 import java.io.File;
+import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
@@ -32,16 +30,16 @@ public class BaseSetup {
     static DesiredCapabilities cap;
     static AppiumServiceBuilder builder;
     static AppiumDriverLocalService service;
-
+//    int port = 4723;
 
     public static AndroidDriver getDriver(){
         return driver;
     }
 
-    public void startAppiumServer() throws InterruptedException {
+    public void startAppiumServer(int port) throws InterruptedException {
         builder = new AppiumServiceBuilder();
         builder.withIPAddress(url)
-                .usingPort(4723)
+                .usingPort(port)
                 .withAppiumJS(new File(Appium_JS_Path))
                 .usingDriverExecutable(new File(Appium_Node_Path))
                 .withArgument(BASEPATH, minorUrl)
@@ -73,6 +71,7 @@ public class BaseSetup {
         wait = new WebDriverWait(driver, Duration.ofSeconds(30));
     }
     public HomePage navigateToHomePage(){
+//        envProFile = new PropertiesReader(envFile);
         return new HomePage();
         }
     public void tearDownDriver() throws InterruptedException {

@@ -1,11 +1,9 @@
 package testcases;
 
 import io.appium.java_client.android.AndroidDriver;
-import org.openqa.selenium.WebDriver;
 import org.testng.annotations.*;
 import pages.BaseSetup;
 import pages.HomePage;
-import untils.Helper;
 
 import java.net.MalformedURLException;
 
@@ -20,11 +18,11 @@ public class BaseTest {
         return driver;
     }
 
-
+    @Parameters({"port"})
     @BeforeSuite
-    public void beforeSuite() throws InterruptedException {
+    public void beforeSuite(int port) throws InterruptedException {
         setup = new BaseSetup();
-        setup.startAppiumServer();
+        setup.startAppiumServer(port);
     }
     @Parameters({"device-url", "device-Name", "udid", "device-Version"})
     @BeforeTest

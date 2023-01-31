@@ -3,6 +3,8 @@ package testcases;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pages.Create_ContactPage;
+import ultilities.listeners.Log;
+
 import static org.testng.Assert.assertEquals;
 import static pages.BaseSetup.helper;
 
@@ -16,7 +18,7 @@ public class Create_ContactTest extends BaseTest {
     //Todo:
     @Test(priority = 1)
     public void sendInfoContact() throws InterruptedException {
-        utils.Log.info("Running testcase verify button display");
+        Log.info("Running testcase verify button display");
         create_contactPage.sendInfo(helper.firstName, helper.lastName, helper.phoneNum, helper.email, helper.sip, helper.address);
         create_contactPage.saveContact();
     }
