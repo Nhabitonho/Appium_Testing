@@ -17,7 +17,7 @@ public class Search_ContactTest extends BaseTest{
     @Test(priority = 1)
     public void searchContactInfo(){
 //        search_contactPage.searchContact(helper.searchName);
-        search_contactPage.searchContact("Eric Cartons");
+        search_contactPage.searchContact(helper.searchName);
     }
     @Test(priority = 2)
     public void verifyFirstNameContact(){

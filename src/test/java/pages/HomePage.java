@@ -15,8 +15,9 @@ public class HomePage extends BaseSetup{
     public Delete_ContactPage navigateToDelete(){
         return new Delete_ContactPage();
     }
-    public SendMess_ContactPage navigateToMessTab(){
+    public SendMess_ContactPage navigateToMessTab() throws InterruptedException {
         driver.findElement(By.id("com.android.contacts:id/icon_alternate")).click();
+        Thread.sleep(5000);
         return new SendMess_ContactPage();
     }
     public Search_ContactPage navigateToSeachTab(){

@@ -26,7 +26,7 @@ public class BaseSetup {
     public static WebDriverWait wait;
     static String Appium_Node_Path = "C:\\Program Files\\nodejs\\node.exe";
     static String Appium_JS_Path = "C:\\Users\\lonbui\\AppData\\Roaming\\npm\\node_modules\\appium\\build\\lib\\main.js";
-    static String fullUrl = "http://127.0.0.1:4723/wd/hub";
+//    static String fullUrl = "http://127.0.0.1:4723/wd/hub";
     static String url = "127.0.0.1";
     static String minorUrl = "/wd/hub";
     static DesiredCapabilities cap;
@@ -56,15 +56,15 @@ public class BaseSetup {
         service.stop();
     }
 
-    public void setupDriver() throws MalformedURLException {
+    public void setupDriver(String fullUrl, String deviceName, String udid, String version) throws MalformedURLException {
         helper = new Helper(driver);
         cap = new DesiredCapabilities();
         URL appiumServer = new URL(fullUrl);
         System.out.println("Launching Android device...");
-        cap.setCapability(MobileCapabilityType.DEVICE_NAME, "sdk_gphone64_x86");
-        cap.setCapability(MobileCapabilityType.UDID, "emulator-5554");
+        cap.setCapability(MobileCapabilityType.DEVICE_NAME, deviceName);
+        cap.setCapability(MobileCapabilityType.UDID, udid);
         cap.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
-        cap.setCapability(MobileCapabilityType.PLATFORM_VERSION, "11");
+        cap.setCapability(MobileCapabilityType.PLATFORM_VERSION, version);
         //Phone
         cap.setCapability("addPackage", "com.android.contacts.common.dialog");
         cap.setCapability("addActivity", ".CallSubjectDialog");

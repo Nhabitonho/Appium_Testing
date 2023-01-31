@@ -23,12 +23,13 @@ public class SendMess_ContactPage extends BaseSetup{
         PageFactory.initElements(driver, this);
     }
 
-    public void sendMess(String mess1, String mess2){
+    public void sendMess(String mess1, String mess2) throws InterruptedException {
         messTextField.sendKeys(mess1);
         sendMessButton.click();
         messTextField.sendKeys(mess2);
         sendMessButton.click();
         driver.navigate().back();
+        Thread.sleep(5000);
     }
 
 }
