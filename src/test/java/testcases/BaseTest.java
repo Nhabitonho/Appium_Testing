@@ -20,7 +20,7 @@ public class BaseTest {
 
     @Parameters({"port"})
     @BeforeSuite
-    public void beforeSuite(int port) throws InterruptedException {
+    public void beforeSuite(@Optional("4723") int port) throws InterruptedException {
         setup = new BaseSetup();
         setup.startAppiumServer(port);
     }
