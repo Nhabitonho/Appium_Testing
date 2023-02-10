@@ -9,6 +9,7 @@ import io.appium.java_client.service.local.flags.GeneralServerFlag;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import ultilities.helpers.Helper;
+import ultilities.PropertiesReader;
 
 import java.io.File;
 import java.io.IOException;
@@ -30,6 +31,7 @@ public class BaseSetup {
     static DesiredCapabilities cap;
     static AppiumServiceBuilder builder;
     static AppiumDriverLocalService service;
+    public static PropertiesReader envProFile;
 //    int port = 4723;
 
     public static AndroidDriver getDriver(){
@@ -70,8 +72,8 @@ public class BaseSetup {
         driver = (new AndroidDriver(appiumServer, cap));
         wait = new WebDriverWait(driver, Duration.ofSeconds(30));
     }
-    public HomePage navigateToHomePage(){
-//        envProFile = new PropertiesReader(envFile);
+    public HomePage navigateToHomePage(String envFile) throws IOException {
+        envProFile = new PropertiesReader(envFile);
         return new HomePage();
         }
     public void tearDownDriver() throws InterruptedException {

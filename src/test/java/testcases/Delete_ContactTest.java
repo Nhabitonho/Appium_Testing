@@ -1,11 +1,14 @@
 package testcases;
 
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pages.Delete_ContactPage;
+import ultilities.listeners.ReportListener;
+
 import static org.testng.Assert.assertEquals;
 import static pages.BaseSetup.helper;
-
+@Listeners(ReportListener.class)
 public class Delete_ContactTest extends BaseTest{
     Delete_ContactPage delete_contactPage;
     @BeforeClass

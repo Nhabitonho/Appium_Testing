@@ -1,13 +1,15 @@
 package testcases;
 
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pages.Create_ContactPage;
-import ultilities.listeners.Log;
+import ultilities.Log;
+import ultilities.listeners.ReportListener;
 
 import static org.testng.Assert.assertEquals;
 import static pages.BaseSetup.helper;
-
+@Listeners(ReportListener.class)
 public class Create_ContactTest extends BaseTest {
 
     Create_ContactPage create_contactPage;

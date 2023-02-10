@@ -1,13 +1,9 @@
 package pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.PageFactory;
-
-import java.util.List;
+import ultilities.Log;
 
 public class Edit_ContactPage extends BaseSetup{
     //TODO:
@@ -41,7 +37,7 @@ public class Edit_ContactPage extends BaseSetup{
     }
     public void saveEditContact(){
         saveButton.click();
-        System.out.println("Edit contacts successfully");
+        Log.info("Edit contacts successfully");
     }
     public String verifyToastMessDisplay(){
         return helper.getMessToast();

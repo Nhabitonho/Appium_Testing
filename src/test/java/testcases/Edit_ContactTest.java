@@ -1,11 +1,14 @@
 package testcases;
 
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pages.Edit_ContactPage;
+import ultilities.listeners.ReportListener;
+
 import static org.testng.Assert.assertEquals;
 import static pages.BaseSetup.helper;
-
+@Listeners(ReportListener.class)
 public class Edit_ContactTest extends BaseTest {
     Edit_ContactPage edit_contactPage;
 

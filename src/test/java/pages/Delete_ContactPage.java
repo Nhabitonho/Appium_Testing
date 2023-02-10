@@ -1,11 +1,9 @@
 package pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
-import java.util.List;
+import ultilities.Log;
 
 public class Delete_ContactPage extends BaseSetup{
     @FindBy(xpath = "//android.widget.ImageButton[@content-desc='More options']")
@@ -24,6 +22,6 @@ public class Delete_ContactPage extends BaseSetup{
         more.click();
         deleteButton.click();
         acceptButton.click();
-        System.out.println("Delete contacts successfully");
+        Log.info("Delete contacts successfully");
     }
 }

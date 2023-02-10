@@ -1,10 +1,9 @@
 package pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import ultilities.Log;
 
 public class Create_ContactPage extends BaseSetup {
     @FindBy(id = "com.android.dialer:id/contacts_tab")
@@ -76,7 +75,7 @@ public class Create_ContactPage extends BaseSetup {
 
     public void saveContact(){
         saveButton.click();
-        System.out.println("Create contacts successfully");
+        Log.info("Create contacts successfully");
     }
 
 }

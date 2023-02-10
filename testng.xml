@@ -16,6 +16,7 @@
         <parameter name="device-Version" value="11"/>
         <parameter name="device-url" value="http://127.0.0.1:4723/wd/hub"/>
         <parameter name="udid" value="emulator-5554"/>
+        <parameter name="evn" value="dev"/>
         <classes>
             <class name="testcases.Create_ContactTest"/>
             <class name="testcases.Edit_ContactTest"/>
